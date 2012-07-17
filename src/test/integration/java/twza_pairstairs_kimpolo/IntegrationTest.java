@@ -1,4 +1,4 @@
-package your_package;
+package twza_pairstairs_kimpolo;
 
 import org.hibernate.SessionFactory;
 import org.junit.After;

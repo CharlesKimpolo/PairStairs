@@ -10,7 +10,7 @@
          Scans within the base package of the application for @Components to
          configure as beans
      -->
-    <context:component-scan base-package="your_package"/>
+    <context:component-scan base-package="twza_pairstairs_kimpolo"/>
 
     <!-- Bean Validation -->
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
@@ -19,7 +19,7 @@
         <property name="locations">
             <list>
                 <!-- TODO: Change 'YOUR_APP_NAME' to something suitable and set the environments variables for each environment -->
-                <value>classpath:environments/${YOUR_APP_NAME_ENV:dev}/application.properties</value>
+                <value>classpath:environments/${PairStairs:dev}/application.properties</value>
             </list>
         </property>
     </bean>

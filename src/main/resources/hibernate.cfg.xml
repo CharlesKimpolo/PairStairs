@@ -10,7 +10,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <!-- Mapped classes -->
-        <mapping class="your_package.domain.model.Thingy"/>
+        <mapping class="twza_pairstairs_kimpolo.domain.model.Thingy"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -1,10 +1,10 @@
-package your_package.domain.repository;
+package twza_pairstairs_kimpolo.domain.repository;
 
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import your_package.IntegrationTest;
-import your_package.domain.model.Thingy;
+import twza_pairstairs_kimpolo.IntegrationTest;
+import twza_pairstairs_kimpolo.domain.model.Thingy;
 
 import static org.hibernate.validator.internal.util.Contracts.*;
 import static util.SessionFactoryExtensions.*;

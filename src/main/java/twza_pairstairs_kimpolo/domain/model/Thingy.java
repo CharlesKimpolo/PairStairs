@@ -1,4 +1,4 @@
-package your_package.domain.model;
+package twza_pairstairs_kimpolo.domain.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
 

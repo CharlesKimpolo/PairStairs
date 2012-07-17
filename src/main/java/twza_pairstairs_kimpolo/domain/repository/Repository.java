@@ -1,4 +1,4 @@
-package your_package.domain.repository;
+package twza_pairstairs_kimpolo.domain.repository;
 
 import java.util.List;
 

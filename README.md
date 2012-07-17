@@ -18,7 +18,7 @@
 1. Create your first commit ('`git add . && git commit`')
 1. Open the project in IntelliJ
 1. Rename the base module (java-webapp-skeleton) to match your project name
-1. Rename the package '`your_package`' using IntelliJ's rename refactoring to an appropriate package name
+1. Rename the package '`twza_pairstairs_kimpolo`' using IntelliJ's rename refactoring to an appropriate package name
 1. Go to the 'TO DO' tab and fix any of the remaining To Do items.
 1. Run the build (`gradle precommit`) to make sure you haven't broken anything
 1. Create a commit with your changes ('`git add . && git commit`')

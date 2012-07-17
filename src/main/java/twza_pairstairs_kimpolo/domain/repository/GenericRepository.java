@@ -1,9 +1,8 @@
-package your_package.domain.repository;
+package twza_pairstairs_kimpolo.domain.repository;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.List;

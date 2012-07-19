@@ -7,7 +7,6 @@
       <sourceFolder url="file://$MODULE_DIR$/resources" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="module" module-name="main" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -22,6 +21,7 @@
       </library>
     </orderEntry>
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="pair-stairs" />
   </component>
 </module>
 

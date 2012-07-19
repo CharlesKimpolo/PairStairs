@@ -4,28 +4,29 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import twza_pairstairs_kimpolo.IntegrationTest;
-import twza_pairstairs_kimpolo.domain.model.Thingy;
+import twza_pairstairs_kimpolo.domain.model.PairStairsParticipant;
 
 import static org.hibernate.validator.internal.util.Contracts.*;
 import static util.SessionFactoryExtensions.*;
 
 public class GenericRepositoryTest extends IntegrationTest {
 
-    private Repository<Thingy> repository;
+    private Repository<PairStairsParticipant> repository;
 
     @Before
     public void setUp() throws Exception {
-        repository = new GenericRepository<Thingy>(sessionFactory, Thingy.class);
+        repository = new GenericRepository<PairStairsParticipant>(sessionFactory, PairStairsParticipant.class);
     }
 
     @Test
     public void should_save_a_new_object() throws Exception {
-        Thingy thingy = new Thingy("Hello World!");
-        repository.save(thingy);
+        PairStairsParticipant pairStairsParticipant = new PairStairsParticipant("Hello World!");
+        repository.save(pairStairsParticipant);
 
-        assertNotNull(reload(sessionFactory, thingy));
+        assertNotNull(reload(sessionFactory, pairStairsParticipant));
     }
 
+    // TODO : Implement remaining tests for the repository
     @Test
     @Ignore
     public void should_retrieve_an_object_by_id() throws Exception {

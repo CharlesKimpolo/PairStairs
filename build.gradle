@@ -7,17 +7,21 @@ sourceCompatibility = 1.6
 // Library Versions
 project.ext {
     commonsDbcpVersion = '+'
+    freemarkerVersion = '+'
     h2dbversion = '+'
     hibernateCoreVersion = '+'
     hibernateAnnotationsVersion = '+'
+
     hibernateValidatorVersion = '+'
     javassistVersion = '+'
     jerseyVersion = '+'
     junitVersion = '+'
     liquibaseVersion = '+'
+
     mockitoVersion = '+'
     slf4jVersion = '+'
     seleniumVersion = '+'
+    servletApiVersion = '+'
     springVersion = '+'
 }
 
@@ -54,45 +58,68 @@ configurations {
 dependencies {
 
     /* DB */
-    compile "com.h2database:h2:$project.h2dbversion"
-    compile "commons-dbcp:commons-dbcp:$project.commonsDbcpVersion"
-    compile "org.hibernate:hibernate-core:$project.hibernateCoreVersion"
-    compile "org.hibernate:hibernate-validator:$project.hibernateValidatorVersion"
-    compile "javassist:javassist:$project.javassistVersion"
-    compile "org.springframework:spring-orm:$project.springVersion"
-    compile "org.springframework:spring-jdbc:$project.springVersion"
+    compile "com.h2database:h2:$project.h2dbversion" // A tool that helps to access a database using a browser.
+    compile "commons-dbcp:commons-dbcp:$project.commonsDbcpVersion" //Database Connection Pool of a set of commands (API)
+    compile "org.hibernate:hibernate-core:$project.hibernateCoreVersion" // Hibernate facilitates the storage and retrieval
+                                                                         // of Java domain objects
+   compile "org.hibernate:hibernate-validator:$project.hibernateValidatorVersion" // Is a reference implementation of
+                                                                 //                 Bean Validation
+                                                            // (defines a metadata model and API for JavaBean validation)
+    compile "javassist:javassist:$project.javassistVersion"  // Is a library for editing bytecodes in Java.
+    compile "org.springframework:spring-orm:$project.springVersion" // Spring is the most popular application development
+                                                                    // framework for enterprise Java.
+                                                 // It supports integration with Hibernate, Java Persistence API (JPA).
+                                                 // ORM = Object Relational Mapping
+    compile "org.springframework:spring-jdbc:$project.springVersion" // JDBC = Java Database Connectivity
 
-    compile "org.liquibase:liquibase-core:$project.liquibaseVersion"
+   compile "org.liquibase:liquibase-core:$project.liquibaseVersion" //A Database refactoring tool that allows database
+                                                     //               structures to be defined in XML.
 
     /* Web */
-    compile "org.springframework:spring-webmvc:$project.springVersion"
-    compile "com.sun.jersey:jersey-core:$project.jerseyVersion"
-    compile "com.sun.jersey:jersey-server:$project.jerseyVersion"
-    compile "com.sun.jersey:jersey-json:$project.jerseyVersion"
+    compile "org.springframework:spring-webmvc:$project.springVersion"// webmvc = web model-view-controller is designed
+                                                      // around a DispatcherServlet that dispatches requests to handlers
+
+    compile "javax.servlet:javax.servlet-api:$project.servletApiVersion"
+    compile "org.freemarker:freemarker:$project.freemarkerVersion"
+
+    compile "com.sun.jersey:jersey-core:$project.jerseyVersion" // Provides support for HTTP headers.
+    compile "com.sun.jersey:jersey-server:$project.jerseyVersion" // Provides support for
+    compile "com.sun.jersey:jersey-json:$project.jerseyVersion" // Provides support fojunitVersionr enabling and configuring JSON
+
 
     /* Utilities */
-    compile "org.slf4j:slf4j-log4j12:$project.slf4jVersion"
-    compile "org.slf4j:jcl-over-slf4j:$project.slf4jVersion"
-    compile "org.slf4j:jul-to-slf4j:$project.slf4jVersion"
-    compile "org.springframework:spring-context:$project.springVersion"
+    compile "org.slf4j:slf4j-log4j12:$project.slf4jVersion" // The Simple Logging Facade for Java (SLF4J)
+                                    // serves as a simple facade or abstraction for various logging frameworks,
+                                    //  e.g. java.util.logging
+    compile "org.slf4j:jcl-over-slf4j:$project.slf4jVersion" // Will allow us to redirect log4j and respectively
+                                                            // java.util.logging calls to SLF4
+    compile "org.slf4j:jul-to-slf4j:$project.slf4jVersion" // similar to above
+    compile "org.springframework:spring-context:$project.springVersion" // Dependency Injection (DI)/Inversion of Control (IoC) container
+                                                                        //
 
     /* Unit Test Only */
-    testCompile "junit:junit:$project.junitVersion"
-    testCompile "org.mockito:mockito-all:$project.mockitoVersion"
-
+    testCompile "junit:junit:$project.junitVersion" // A testing framework for Java
+    testCompile "org.mockito:mockito-all:$project.mockitoVersion" // Mockito is a mocking framework that helps to write
+                                                                 // tests with clean & simple API
     /* Integration Test Only */
-    integrationCompile "junit:junit:$project.junitVersion"
-    integrationCompile "org.springframework:spring-test:$project.springVersion"
+    integrationCompile "junit:junit:$project.junitVersion" // A programmer-oriented testing framework for Java
+    integrationCompile "org.springframework:spring-test:$project.springVersion" // The Spring Framework that provides
+                                                                                // support for integration testing
 
     /* Functional Test Only */
-    functionalCompile "junit:junit:$project.junitVersion"
-    functionalCompile "org.seleniumhq.selenium:selenium-java:$project.seleniumVersion"
-
+    functionalCompile "junit:junit:$project.junitVersion" // A programmer-oriented testing framework for Java
+    functionalCompile "org.seleniumhq.selenium:selenium-java:$project.seleniumVersion" // A most widely used source tool
+                                                    // available for assisting with the development of test automation
 }
-
 task jettyDaemon(type: org.gradle.api.plugins.jetty.JettyRun) {
     daemon = true
 }
+
+
+jettyRun {
+  contextPath = 'pair-stairs'
+}
+
 
 test {
     testReportDir = file('build/reports/tests/unit')
